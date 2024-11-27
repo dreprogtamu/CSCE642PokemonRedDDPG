@@ -72,7 +72,7 @@ if __name__ == '__main__':
     
     if exists(file_name + '.zip'):
         print('\nloading checkpoint')
-        model = PPO.load(file_name, env=env)
+        model = DDPG.load(file_name, env=env)
         model.n_steps = ep_length
         model.n_envs = num_cpu
         model.rollout_buffer.buffer_size = ep_length
