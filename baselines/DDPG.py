@@ -46,7 +46,7 @@ class ActorCriticNetwork(nn.Module):
         self.pi = PolicyNetwork(obs_dim, act_dim, act_lim, hidden_sizes)
 
 class DDPG:
-    def __init__(self, env, verbose=0, **kwargs):
+    def __init__(self, policy, env, verbose=0, **kwargs):
         self.env = env
         self.verbose = verbose
         self.options = {
@@ -81,19 +81,24 @@ class DDPG:
             print("DDPG initialized with options:", self.options)
 
     @staticmethod
-    def create(env, verbose=0, **kwargs):
+    def load(path, env, **kwargs):
         """
-        Factory method to create a DDPG model similar to stable_baselines3 style.
-
-        Args:
-            env: The environment to train on.
-            verbose: Level of verbosity (0: no output, 1: info).
-            kwargs: Additional hyperparameters such as gamma, batch_size, steps, etc.
-
-        Returns:
-            An instance of the DDPG class.
+        Loads a saved DDPG model.
         """
-        return DDPG(env, verbose=verbose, **kwargs)
+        model = DDPG('CnnPolicy', env, **kwargs)
+        checkpoint = torch.load(path)
+        model.actor_critic.load_state_dict(checkpoint['actor_critic'])
+        model.target_actor_critic.load_state_dict(checkpoint['target_actor_critic'])
+        return model
+
+    def save(self, path):
+        """
+        Saves the DDPG model.
+        """
+        torch.save({
+            'actor_critic': self.actor_critic.state_dict(),
+            'target_actor_critic': self.target_actor_critic.state_dict()
+        }, path)
 
     @torch.no_grad()
     def select_action(self, state):
@@ -110,6 +115,16 @@ class DDPG:
         action_limit = self.env.action_space.high[0]
         action = mu + noise_scale * m.sample()
         return torch.clip(action, -action_limit, action_limit).numpy()
+
+    def learn(self, total_timesteps, callback=None):
+        """
+        Runs the training process for the specified number of timesteps.
+        """
+        num_episodes = total_timesteps // self.options['steps']
+        for episode in range(num_episodes):
+            self.train_episode()
+            if callback:
+                callback.on_step()
 
     def train_episode(self):
         """
