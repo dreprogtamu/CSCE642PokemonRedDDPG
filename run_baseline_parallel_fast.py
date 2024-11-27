@@ -84,7 +84,7 @@ if __name__ == '__main__':
         # The noise objects for DDPG
         n_actions = env.action_space.shape[-1]
         action_noise = NormalActionNoise(mean=np.zeros(n_actions), sigma=0.1 * np.ones(n_actions))
-        model = DDPG("CnnPolicy", env, action_noise=action_noise, verbose=1)
+        model = DDPG("CnnPolicy", env, action_noise=action_noise, verbose=1, tensorboard_log=sess_path)
 
 
     # run for up to 5k episodes
