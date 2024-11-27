@@ -8,7 +8,12 @@ from stable_baselines3.common.vec_env import DummyVecEnv, SubprocVecEnv
 from stable_baselines3.common.utils import set_random_seed
 from stable_baselines3.common.callbacks import CheckpointCallback, CallbackList
 from stable_baselines3.common.noise import NormalActionNoise, OrnsteinUhlenbeckActionNoise
-from tensorboard_callback import TensorboardCallback
+# from tensorboard_callback import TensorboardCallback
+try:
+    from tensorboard_callback import TensorboardCallback
+    print("TensorboardCallback imported successfully")
+except ImportError as e:
+    print("Error importing TensorboardCallback:", e)
 
 # from DDPG import DDPG
 
