@@ -25,6 +25,7 @@ class RedGymEnv(Env):
     def __init__(
         self, config=None):
 
+        self.curriculum_stage = config.get('curriculum_stage', 1)
         self.debug = config['debug']
         self.s_path = config['session_path']
         self.save_final_state = config['save_final_state']
@@ -508,19 +509,50 @@ class RedGymEnv(Env):
             print(f'oak_parcel: {oak_parcel} oak_pokedex: {oak_pokedex} all_events_score: {all_events_score}')
         '''
         
-        state_scores = {
-            'event': self.reward_scale*self.update_max_event_rew(),  
-            #'party_xp': self.reward_scale*0.1*sum(poke_xps),
-            'level': self.reward_scale*self.get_levels_reward(), 
-            'heal': self.reward_scale*self.total_healing_rew,
-            'op_lvl': self.reward_scale*self.update_max_op_level(),
-            'dead': self.reward_scale*-0.1*self.died_count,
-            'badge': self.reward_scale*self.get_badges() * 5,
-            #'op_poke': self.reward_scale*self.max_opponent_poke * 800,
-            #'money': self.reward_scale* money * 3,
-            #'seen_poke': self.reward_scale * seen_poke_count * 400,
-            'explore': self.reward_scale * self.get_knn_reward()
-        }
+        if self.curriculum_stage == 1:
+            state_scores = {
+                'event': self.reward_scale*self.update_max_event_rew(),
+                #'party_xp': self.reward_scale*0.1*sum(poke_xps),
+                'level': self.reward_scale*self.get_levels_reward(),
+                'heal': self.reward_scale*self.total_healing_rew,
+                'op_lvl': self.reward_scale*self.update_max_op_level(),
+                'dead': self.reward_scale*-0.1*self.died_count,
+                'badge': self.reward_scale*self.get_badges() * 1,
+                #'op_poke': self.reward_scale*self.max_opponent_poke * 800,
+                #'money': self.reward_scale* money * 3,
+                #'seen_poke': self.reward_scale * seen_poke_count * 400,
+                'explore': self.reward_scale * self.get_knn_reward() * 10 # Focus on exploration
+            }
+
+        elif self.curriculum_stage == 2:
+            state_scores = {
+                'event': self.reward_scale*self.update_max_event_rew(),
+                #'party_xp': self.reward_scale*0.1*sum(poke_xps),
+                'level': self.reward_scale*self.get_levels_reward() * 10, # Focus on catching pokemons
+                'heal': self.reward_scale*self.total_healing_rew,
+                'op_lvl': self.reward_scale*self.update_max_op_level(),
+                'dead': self.reward_scale*-0.1*self.died_count,
+                'badge': self.reward_scale*self.get_badges() * 2,
+                #'op_poke': self.reward_scale*self.max_opponent_poke * 800,
+                #'money': self.reward_scale* money * 3,
+                #'seen_poke': self.reward_scale * seen_poke_count * 400,
+                'explore': self.reward_scale * self.get_knn_reward()
+            }
+
+        elif self.curriculum_stage == 3:
+            state_scores = {
+                'event': self.reward_scale*self.update_max_event_rew(),
+                #'party_xp': self.reward_scale*0.1*sum(poke_xps),
+                'level': self.reward_scale*self.get_levels_reward(),
+                'heal': self.reward_scale*self.total_healing_rew,
+                'op_lvl': self.reward_scale*self.update_max_op_level(),
+                'dead': self.reward_scale*-0.1*self.died_count,
+                'badge': self.reward_scale*self.get_badges() * 5, # Focus on defeating gym leaders
+                #'op_poke': self.reward_scale*self.max_opponent_poke * 800,
+                #'money': self.reward_scale* money * 3,
+                #'seen_poke': self.reward_scale * seen_poke_count * 400,
+                'explore': self.reward_scale * self.get_knn_reward()
+            }
         
         return state_scores
     
