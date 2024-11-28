@@ -50,7 +50,7 @@ if __name__ == '__main__':
     checkpoint_callback = CheckpointCallback(save_freq=ep_length, save_path=sess_path,
                                              name_prefix='poke')
     # env_checker.check_env(env)
-    learn_steps = 15
+    learn_steps = 13
     # put a checkpoint here you want to start from
     file_name = 'session_e41c9eff/poke_38207488_steps'
 
