@@ -63,7 +63,7 @@ if __name__ == '__main__':
         model.rollout_buffer.n_envs = num_cpu
         model.rollout_buffer.reset()
     else:
-        model = PPO('CnnPolicy', env, verbose=1, gamma=0.998, batch_size=128, steps=ep_length // 8)
+        model = PPO('CnnPolicy', env, verbose=1, gamma=0.998, batch_size=128)
 
     curriculum_stages = 4
 

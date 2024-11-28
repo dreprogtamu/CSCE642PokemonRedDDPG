@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d4e07a6-aaed-4716-97d4-3fa8af1c79d1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CSCE642PokemonRedDDPG.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/Visualizations_over_time.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/Visualizations_over_time.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baselines/run_baseline_parallel_fast.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/run_baseline_parallel_fast.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v2/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/v2/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/Agent_Visualization.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/Agent_Visualization.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/BetterMapVis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/BetterMapVis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/Create_Video_Grids.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/Create_Video_Grids.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,27 +27,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.baseline_fast_v2.executor": "Run",
-    "Python.run_baseline_parallel.executor": "Run",
-    "Python.run_baseline_parallel_fast.executor": "Run",
-    "Python.run_pretrained_interactive.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "efficient-resize",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/dolson/Documents/GitHub/CSCE642PokemonRedDDPG/visualization",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.baseline_fast_v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_baseline_parallel.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_baseline_parallel_fast.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_pretrained_interactive.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;efficient-resize&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dolson/Documents/GitHub/CSCE642PokemonRedDDPG/visualization&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.run_baseline_parallel">
     <configuration name="baseline_fast_v2" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="CSCE642PokemonRedDDPG" />
