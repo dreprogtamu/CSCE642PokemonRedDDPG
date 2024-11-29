@@ -74,6 +74,6 @@ if __name__ == '__main__':
         model.set_env(env)
         for i in range(learn_steps):
             try:
-            model.learn(total_timesteps=(ep_length) * num_cpu * 1000, callback=checkpoint_callback)
+                model.learn(total_timesteps=(ep_length) * num_cpu * 1000, callback=checkpoint_callback)
             except Exception as e:
-            print(f"Error during learning at stage {stage}, step {i}: {e}")
+                print(f"Error during learning at stage {stage}, step {i}: {e}")
