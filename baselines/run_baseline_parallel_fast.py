@@ -65,7 +65,7 @@ if __name__ == '__main__':
     else:
         model = PPO('CnnPolicy', env, verbose=1, gamma=0.998, batch_size=128)
 
-    curriculum_stages = 4
+    curriculum_stages = 3
 
     for stage in range(1, curriculum_stages + 1):
         print(f"\nStarting curriculum stage {stage}\n")
@@ -73,4 +73,7 @@ if __name__ == '__main__':
         env = SubprocVecEnv([make_env(i, env_config) for i in range(num_cpu)])
         model.set_env(env)
         for i in range(learn_steps):
+            try:
             model.learn(total_timesteps=(ep_length) * num_cpu * 1000, callback=checkpoint_callback)
+            except Exception as e:
+            print(f"Error during learning at stage {stage}, step {i}: {e}")
