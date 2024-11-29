@@ -521,18 +521,18 @@ class RedGymEnv(Env):
                 #'op_poke': self.reward_scale*self.max_opponent_poke * 800,
                 #'money': self.reward_scale* money * 3,
                 #'seen_poke': self.reward_scale * seen_poke_count * 400,
-                'explore': self.reward_scale * self.get_knn_reward() * 10 # Focus on exploration
+                'explore': self.reward_scale * self.get_knn_reward() * 3 # Focus on exploration
             }
 
         elif self.curriculum_stage == 2:
             state_scores = {
                 'event': self.reward_scale*self.update_max_event_rew(),
                 #'party_xp': self.reward_scale*0.1*sum(poke_xps),
-                'level': self.reward_scale*self.get_levels_reward() * 10, # Focus on catching pokemons
+                'level': self.reward_scale*self.get_levels_reward() * 3, # Focus on catching pokemons
                 'heal': self.reward_scale*self.total_healing_rew,
                 'op_lvl': self.reward_scale*self.update_max_op_level(),
                 'dead': self.reward_scale*-0.1*self.died_count,
-                'badge': self.reward_scale*self.get_badges() * 2,
+                'badge': self.reward_scale*self.get_badges(),
                 #'op_poke': self.reward_scale*self.max_opponent_poke * 800,
                 #'money': self.reward_scale* money * 3,
                 #'seen_poke': self.reward_scale * seen_poke_count * 400,
@@ -547,7 +547,7 @@ class RedGymEnv(Env):
                 'heal': self.reward_scale*self.total_healing_rew,
                 'op_lvl': self.reward_scale*self.update_max_op_level(),
                 'dead': self.reward_scale*-0.1*self.died_count,
-                'badge': self.reward_scale*self.get_badges() * 5, # Focus on defeating gym leaders
+                'badge': self.reward_scale*self.get_badges() * 3, # Focus on defeating gym leaders
                 #'op_poke': self.reward_scale*self.max_opponent_poke * 800,
                 #'money': self.reward_scale* money * 3,
                 #'seen_poke': self.reward_scale * seen_poke_count * 400,
