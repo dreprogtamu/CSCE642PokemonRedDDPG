@@ -50,7 +50,9 @@ if __name__ == '__main__':
     checkpoint_callback = CheckpointCallback(save_freq=ep_length, save_path=sess_path,
                                              name_prefix='poke')
     # env_checker.check_env(env)
-    learn_steps = 13
+    # learn_steps_1 = 5
+    # learn_steps_2 = 15
+    # learn_steps_3 = 20
     # put a checkpoint here you want to start from
     file_name = 'session_e41c9eff/poke_38207488_steps'
 
@@ -72,6 +74,12 @@ if __name__ == '__main__':
         env_config['curriculum_stage'] = stage
         env = SubprocVecEnv([make_env(i, env_config) for i in range(num_cpu)])
         model.set_env(env)
+        if stage == 1:
+            learn_steps = 5
+        if stage == 2:
+            learn_steps = 15
+        if stage == 3:
+            learn_steps = 20
         for i in range(learn_steps):
             try:
                 model.learn(total_timesteps=(ep_length) * num_cpu * 1000, callback=checkpoint_callback)
