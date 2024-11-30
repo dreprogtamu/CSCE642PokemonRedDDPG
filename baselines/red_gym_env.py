@@ -517,7 +517,7 @@ class RedGymEnv(Env):
                 'heal': self.reward_scale*self.total_healing_rew,
                 'op_lvl': self.reward_scale*self.update_max_op_level(),
                 'dead': self.reward_scale*-0.1*self.died_count,
-                'badge': self.reward_scale*self.get_badges() * 1,
+                'badge': self.reward_scale*self.get_badges() * 5,
                 #'op_poke': self.reward_scale*self.max_opponent_poke * 800,
                 #'money': self.reward_scale* money * 3,
                 #'seen_poke': self.reward_scale * seen_poke_count * 400,

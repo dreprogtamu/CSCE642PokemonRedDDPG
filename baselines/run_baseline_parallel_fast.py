@@ -67,7 +67,7 @@ if __name__ == '__main__':
     else:
         model = PPO('CnnPolicy', env, verbose=1, gamma=0.998, batch_size=128)
 
-    curriculum_stages = 3
+    curriculum_stages = 13
 
     for stage in range(1, curriculum_stages + 1):
         print(f"\nStarting curriculum stage {stage}\n")
