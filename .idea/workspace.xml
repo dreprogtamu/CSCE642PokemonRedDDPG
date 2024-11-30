@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d4e07a6-aaed-4716-97d4-3fa8af1c79d1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baselines/red_gym_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/red_gym_env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/baselines/run_baseline_parallel_fast.py" beforeDir="false" afterPath="$PROJECT_DIR$/baselines/run_baseline_parallel_fast.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
