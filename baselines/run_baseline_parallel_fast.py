@@ -75,11 +75,11 @@ if __name__ == '__main__':
         env = SubprocVecEnv([make_env(i, env_config) for i in range(num_cpu)])
         model.set_env(env)
         if stage == 1:
-            learn_steps = 5
+            learn_steps = 30
         if stage == 2:
-            learn_steps = 15
+            learn_steps = 6
         if stage == 3:
-            learn_steps = 20
+            learn_steps = 3
         for i in range(learn_steps):
             try:
                 model.learn(total_timesteps=(ep_length) * num_cpu * 1000, callback=checkpoint_callback)
