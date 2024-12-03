@@ -80,7 +80,8 @@ Windows 10
  
 7.3) If you didn't got any warnings or red text you're good to go and use it
  
-
+8) You will have to add your own legally obtained PokemonRed.gb ROM file to the root directory of the project
+   
 If you had already a version of python installed, Python 3.11.6 might not work from the above command lines, you should use the below paths for the pip command and the python command
 
 "%localappdata%\Programs\Python\Python311\Scripts\pip.exe" install -r requirements.txt
