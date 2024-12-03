@@ -1,6 +1,6 @@
 ## Windows guide
 
-Made by discord user @Aisiktir
+This is from the original github repo for the project:
 
 1.) Python, https://www.python.org/ftp/python/3.11.6/python-3.11.6-amd64.exe 
  
