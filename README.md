@@ -8,9 +8,10 @@ Instructions to setup on windows available here: [Windows Instructions](windows-
 The vast majority of code in this repository is from the original. The only files we changed were:  
 /baselines/run_baseline_parallel_fast.py  
 /baselines/red_gym_env.py  
-/baselines/DDPG.py  
+/baselines/DDPG.py 
 /baselines/Visualizations_over_time  
 /VisualizeProgress.ipynb  
 See below screenshots of our commit history:  
-[First]("Screenshot1.png")  
-[Second]("Screenshot2.png")  
+[First](Screenshot1.png)  
+[Second](Screenshot2.png)  
+ShadowValeKnight is Sicheng Chen, dreprogtamu is Dawson Reprogle
