@@ -85,6 +85,4 @@ If you had already a version of python installed, Python 3.11.6 might not work f
 
 "%localappdata%\Programs\Python\Python311\Scripts\pip.exe" install -r requirements.txt
 
-"%localappdata%\Programs\Python\Python311\python.exe" run_pretrained_interactive.py
-
-"%localappdata%\Programs\Python\Python311\python.exe" run_baseline_parallel_fast.py
+"%localappdata%\Programs\Python\Python311\python.exe" run_baseline_parallel_fast.py -> This will run our curriculum learning PPO code
