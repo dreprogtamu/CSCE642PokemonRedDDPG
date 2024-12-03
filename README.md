@@ -15,9 +15,3 @@ See below screenshots of our commit history:
 [First](Screenshot1.png)  
 [Second](Screenshot2.png)  
 ShadowValeKnight is Sicheng Chen, dreprogtamu is Dawson Reprogle
-
-# Presentation
-https://youtu.be/ofokercMzVI
-
-# Final Report 
-https://docs.google.com/document/d/101-ls0LpiyHW2v0bbLQc6SRnHlG2uR5KPA3w4fhWGJs/edit?usp=sharing
