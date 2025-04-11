@@ -1,12 +1,12 @@
 __pycache__
 .DS_Store
 rollouts
-*.gb
 *.ram
 .ipynb_checkpoints
 raw_documentation
 *.pem
+*.mp4
+*.gb
 _autoplay.mp4
 session_*
 .env
-PokemonRed.gb.state
